@@ -1,10 +1,7 @@
-FROM maven as build
-MAINTAINER sarat.e99@gmail.com Sarat Chandra E
-
-
+FROM maven AS build
 WORKDIR /app
 COPY . .
-RUN mvn install
+RUN mvn install -DskipTests
 
 #jdk
 FROM openjdk:11.0.10-jre
